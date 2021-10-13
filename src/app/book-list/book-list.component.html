@@ -1,8 +1,8 @@
 <div>
     <h3>Add a book to your library:</h3>
-    Title:<input type="text" [(ngModel)]="title" />
-    Author:<input type="text" [(ngModel)]="author" />
-    Pub. Year<input type="number" [(ngModel)]="published" />
+    Title:<input type="text" [(ngModel)]="book.title" />
+    Author:<input type="text" [(ngModel)]="book.author" />
+    Pub. Year<input type="number" [(ngModel)]="book.published" />
     <button (click)="addBook()">Save Book</button>
 </div>
 <app-book *ngFor="let book of books" [book]="book" (deleted)="deleteBook(book)"></app-book>

@@ -10,10 +10,7 @@ import { Book } from '../interfaces/book';
 export class BookListComponent implements OnInit {
 
   books: Book[] = [];
-  book: Book = {title: "", author: "", published: 0};
-  title: string = "";
-  author: string = "";
-  published: number = 0;
+  book: Book = { title: "", author: "", published: 0 };
 
   constructor(private bookService: BookService) { }
 
@@ -21,14 +18,9 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.getBooks();
   }
 
-  addBook(): void{
-    this.book.title = this.title;
-    this.book.author = this.author;
-    this.book.published = this.published;
+  addBook(): void {
     this.books.push(this.book);
-    this.title = "";
-    this.author = "";
-    this.published = 0;
+    this.book = { title: "", author: "", published: 0 };
   }
 
   deleteBook(book: Book): void {
